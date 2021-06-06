@@ -1,8 +1,12 @@
 package Massiv;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class mass1 {
     public static void main(String[] args) {
+
         char[] charArray = new char[5];
         charArray[0] = 'r';
         charArray[1] = 'a';
