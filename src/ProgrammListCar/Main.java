@@ -71,22 +71,28 @@ public class Main {
         carList.add(car29);
         carList.add(car30);
 
-        Map<Car, Integer> carMap = new HashMap<>();
-
-        for(Car car: carList) {
-            if(carMap.containsKey(car)) {
-                int value = carMap.get(car);
-                carMap.put(car, ++value);
-            } else {
-                carMap.put(car, 1);
-            }
+        Set<Car> carSet = new TreeSet<>(new CarComparator().reversed());
+        carSet.addAll(carList);
+        for(Car car: carSet) {
+            System.out.println(car.getName());
         }
 
-        for(Map.Entry<Car, Integer> carEntry: carMap.entrySet()) {
-            System.out.println(carEntry.getKey() + " = " + carEntry.getValue());
-        }
-
-//        Set<Car> carSet = new HashSet<>(carList);
+//        Map<Car, Integer> carMap = new HashMap<>();
+//
+//        for(Car car: carList) {
+//            if(carMap.containsKey(car)) {
+//                int value = carMap.get(car);
+//                carMap.put(car, ++value);
+//            } else {
+//                carMap.put(car, 1);
+//            }
+//        }
+//
+//        for(Map.Entry<Car, Integer> carEntry: carMap.entrySet()) {
+//            System.out.println(carEntry.getKey() + " = " + carEntry.getValue());
+//        }
+//
+////        Set<Car> carSet = new HashSet<>(carList);
 //
 //        for(Car car: carSet) {
 //            System.out.println(car);
